@@ -1,2 +1,2 @@
 [workspace]
-members = ["tasks/practice-a", "tasks/abc086a", "tasks/abc081a"]
+members = ["tasks/practice-a", "tasks/abc086a", "tasks/abc081a", "tasks/abc081b"]
