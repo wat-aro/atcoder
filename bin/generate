@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd tasks
+echo -n "🤷   Project Name : "
+read project_name
+cargo generate --git https://github.com/rust-lang-ja/atcoder-rust-base --branch ja --name $project_name
+cd ..
+grep -n members Cargo.toml | awk -F: '{print $1}' | xargs -I{} sed -i -e "{} s/]/, \"tasks\/$project_name\"]/g" Cargo.toml
