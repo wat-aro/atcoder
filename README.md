@@ -3,9 +3,14 @@
 ## Setup
 
 ``` shell
-$ mkdir CONTEST_NAME
-$ cd CONTEST_NAME
-$ ../bin/generate
+bin/generate
 ```
 
-Input task name
+Enter a task name. A project with the task name you entered will then be created under the task directory.
+
+
+## Test
+
+``` shell
+$ cargo test -p TASK_NAME
+```
