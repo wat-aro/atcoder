@@ -6,3 +6,9 @@ read project_name
 cargo generate --git https://github.com/rust-lang-ja/atcoder-rust-base --branch ja --name $project_name
 cd ..
 grep -n members Cargo.toml | awk -F: '{print $1}' | xargs -I{} sed -i -e "{} s/]/, \"tasks\/$project_name\"]/g" Cargo.toml
+
+cargo_path="tasks/$project_name/Cargo.toml"
+grep -n "name = \"main\"" $cargo_path | awk -F: '{print$1}' | xargs -I{} sed -i -e "{} s/main/$project_name/g" $cargo_path
+
+test_path="tasks/$project_name/tests/sample_inputs.rs"
+grep -n "./main" $test_path | awk -F: '{print$1}' | xargs -I{} sed -i -e "{} s/main/$project_name/g" $test_path
