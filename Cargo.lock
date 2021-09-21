@@ -180,6 +180,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "sumitb2019b"
+version = "0.1.0"
+dependencies = [
+ "cli_test_dir",
+ "proconio",
+]
+
+[[package]]
 name = "syn"
 version = "0.15.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
