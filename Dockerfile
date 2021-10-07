@@ -1,4 +1,4 @@
-FROM rust:1.53.0-buster AS cargo-generate
+FROM rust:1.55.0-buster AS cargo-generate
 RUN apt-get update -qq \
   && apt-get install libssl-dev pkg-config
 RUN cargo install cargo-generate
