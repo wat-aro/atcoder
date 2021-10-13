@@ -6,5 +6,12 @@ fn main() {
     }
     let n = format!("{}{}", a, b).parse::<f64>().unwrap();
     let m = n.sqrt();
-    println!("{}", if m == (m as u64) as f64 { "Yes" } else { "No" });
+    println!(
+        "{}",
+        if (m - (m as u64) as f64) < std::f64::EPSILON {
+            "Yes"
+        } else {
+            "No"
+        }
+    );
 }

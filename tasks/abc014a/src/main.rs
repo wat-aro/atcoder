@@ -18,7 +18,7 @@ fn main() {
         a = t1 + t2;
         b = t2 + t3;
         c = t3 + t1;
-        i = i + 1;
+        i += 1;
     }
 
     println!("{}", i);

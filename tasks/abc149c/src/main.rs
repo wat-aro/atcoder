@@ -21,7 +21,7 @@ fn main() {
 
     loop {
         if sieve.iter().any(|i| x % i == 0) {
-            x = x + 1;
+            x += 1;
         } else {
             break;
         }

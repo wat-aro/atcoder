@@ -24,7 +24,7 @@ fn main() {
     println!("{}", if answer { "Yes" } else { "No" });
 }
 
-fn transpose<T>(v: &Vec<Vec<T>>) -> Vec<Vec<T>>
+fn transpose<T>(v: &[Vec<T>]) -> Vec<Vec<T>>
 where
     T: Clone,
 {

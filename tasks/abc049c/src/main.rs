@@ -15,7 +15,7 @@ fn main() {
 
 fn solve(s: String) -> bool {
     let targets = ["dream", "dreamer", "erase", "eraser"];
-    let mut dp: [bool; 100000] = [false; 100000];
+    let mut dp: [bool; 100_000] = [false; 100_000];
     dp[0] = true;
 
     for i in 0..s.len() {
@@ -33,5 +33,5 @@ fn solve(s: String) -> bool {
         }
     }
 
-    return dp[s.len()];
+    dp[s.len()]
 }

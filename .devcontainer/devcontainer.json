@@ -25,6 +25,8 @@
 			"editor.formatOnSave": true,
 			"editor.defaultFormatter": "statiolake.vscode-rustfmt",
 		},
+		"rust-analyzer.server.path": "/usr/local/cargo/bin/rust-analyzer",
+		"rust-analyzer.checkOnSave.command": "clippy"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.

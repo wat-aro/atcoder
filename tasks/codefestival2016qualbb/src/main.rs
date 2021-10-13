@@ -17,15 +17,15 @@ fn main() {
     let answers = s.chars().map(|c| {
         if c == 'a' {
             if grade < a + b {
-                grade = grade + 1;
+                grade += 1;
                 "Yes"
             } else {
                 "No"
             }
         } else if c == 'b' {
             if grade < a + b && abroard_grade < b {
-                grade = grade + 1;
-                abroard_grade = abroard_grade + 1;
+                grade += 1;
+                abroard_grade += 1;
                 "Yes"
             } else {
                 "No"

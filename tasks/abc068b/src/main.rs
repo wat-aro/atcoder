@@ -6,7 +6,7 @@ fn main() {
     }
     let mut x: u16 = 1;
     while x * 2 <= n {
-        x = x * 2;
+        x *= 2;
     }
     println!("{}", x);
 }
