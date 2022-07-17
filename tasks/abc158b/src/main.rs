@@ -12,7 +12,8 @@ fn main() {
 
     let x = n / (a + b);
     let y = n % (a + b);
-    let answer = x * a + y;
+    let z = if y > a { a } else { y };
+    let answer = x * a + z;
 
     println!("{}", answer);
 }
