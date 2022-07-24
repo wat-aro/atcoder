@@ -1,18 +1,17 @@
 use proconio::input;
-use std::collections::hash_map::RandomState;
-use std::collections::HashSet;
-use std::iter::FromIterator;
 
 fn main() {
     input! {
-        (n, _m): (usize, usize),
+        (n, m): (usize, usize),
         answers: [[u16]; n],
     }
-    let mut result: HashSet<&u16, RandomState> = HashSet::from_iter(answers[0].iter());
-    for v in answers[1..].iter() {
-        let other = HashSet::from_iter(v.iter());
-        result = result.intersection(&other).map(|i| *i).collect();
+    let mut result = vec![0; m];
+    for v in answers.iter() {
+        for i in v {
+            result[(i - 1) as usize] += 1;
+        }
     }
+    let answer = result.iter().filter(|i| **i == n).count();
 
-    println!("{}", result.len());
+    println!("{}", answer);
 }
