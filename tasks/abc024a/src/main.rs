@@ -6,14 +6,10 @@ fn main() {
     }
     let answer;
     if k % 2 == 0 {
-        answer = a.checked_sub(b);
+        answer = a - b
     } else {
-        answer = b.checked_sub(a);
+        answer = b - a
     }
 
-    if let Some(i) = answer {
-        println!("{}", i);
-    } else {
-        println!("Unfair");
-    }
+    println!("{}", answer);
 }
