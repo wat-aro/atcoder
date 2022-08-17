@@ -507,6 +507,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "abc144c"
+version = "0.1.0"
+dependencies = [
+ "cli_test_dir",
+ "proconio",
+]
+
+[[package]]
 name = "abc148d"
 version = "0.1.0"
 dependencies = [
