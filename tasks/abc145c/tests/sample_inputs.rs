@@ -16,7 +16,17 @@ fn sample1() {
         )
         .tee_output()
         .expect_success();
-    assert_eq!(output.stdout_str(), "2.2761423749\n");
+    assert!(
+        (output
+            .stdout_str()
+            .trim()
+            .to_string()
+            .parse::<f64>()
+            .unwrap()
+            - 2.2761423749)
+            .abs()
+            < 0.000001
+    );
     assert!(output.stderr_str().is_empty());
 }
 
@@ -33,7 +43,17 @@ fn sample2() {
         )
         .tee_output()
         .expect_success();
-    assert_eq!(output.stdout_str(), "91.9238815543\n");
+    assert!(
+        (output
+            .stdout_str()
+            .trim()
+            .to_string()
+            .parse::<f64>()
+            .unwrap()
+            - 91.9238815543)
+            .abs()
+            < 0.000001
+    );
     assert!(output.stderr_str().is_empty());
 }
 
@@ -56,6 +76,16 @@ fn sample3() {
         )
         .tee_output()
         .expect_success();
-    assert_eq!(output.stdout_str(), "7641.9817824387\n");
+    assert!(
+        (output
+            .stdout_str()
+            .trim()
+            .to_string()
+            .parse::<f64>()
+            .unwrap()
+            - 7641.9817824387)
+            .abs()
+            < 0.000001
+    );
     assert!(output.stderr_str().is_empty());
 }
