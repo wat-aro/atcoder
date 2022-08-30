@@ -12,5 +12,5 @@ fn main() {
             s.push(c);
         }
     }
-    println!("{s}");
+    println!("{}", s);
 }
