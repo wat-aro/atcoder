@@ -769,6 +769,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "ddcc2020qualb"
+version = "0.1.0"
+dependencies = [
+ "cli_test_dir",
+ "proconio",
+]
+
+[[package]]
 name = "either"
 version = "1.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
