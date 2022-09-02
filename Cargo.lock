@@ -787,6 +787,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "codefestival2017qualcb"
+version = "0.1.0"
+dependencies = [
+ "cli_test_dir",
+ "proconio",
+]
+
+[[package]]
 name = "ddcc2020qualb"
 version = "0.1.0"
 dependencies = [
