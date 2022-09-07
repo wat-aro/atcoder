@@ -4,12 +4,13 @@ fn main() {
     input! {
         s: String
     }
-    let mut answer = 0;
-    let mut white_count = 0;
-    for (i, c) in s.chars().enumerate() {
+    let mut answer: u64 = 0;
+    let mut black_count: u64 = 0;
+    for c in s.chars() {
         if c == 'W' {
-            answer += i - white_count;
-            white_count += 1;
+            answer += black_count;
+        } else {
+            black_count += 1;
         }
     }
     println!("{}", answer);
