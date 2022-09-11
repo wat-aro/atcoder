@@ -8,48 +8,24 @@ fn main() {
         w: usize,
         mut s: [Chars; h]
     }
+    let dx: [i64; 3] = [-1, 0, 1];
+    let dy: [i64; 3] = [-1, 0, 1];
+
     for i in 0..s.len() {
         for j in 0..s[i].len() {
             if s[i][j] == '.' {
-                let mut count: u32 = 0;
-                if i > 0 {
-                    if s[i - 1][j] == '#' {
-                        count += 1;
-                    }
-                    if j > 0 {
-                        if s[i - 1][j - 1] == '#' {
+                let mut count = 0;
+                for xx in dx.iter() {
+                    for yy in dy.iter() {
+                        let x = j as i64 + xx;
+                        let y = i as i64 + yy;
+                        if 0 <= x
+                            && x < w as i64
+                            && 0 <= y
+                            && y < h as i64
+                            && s[y as usize][x as usize] == '#'
+                        {
                             count += 1;
-                        }
-                    }
-                    if j < w - 1 {
-                        if s[i - 1][j + 1] == '#' {
-                            count += 1;
-                        }
-                    }
-                }
-                if j > 0 {
-                    if s[i][j - 1] == '#' {
-                        count += 1;
-                    }
-                }
-                if j < w - 1 {
-                    if s[i][j + 1] == '#' {
-                        count += 1;
-                    }
-                }
-                if i < h - 1 {
-                    if s[i + 1][j] == '#' {
-                        count += 1;
-                    }
-
-                    if j > 0 {
-                        if s[i + 1][j - 1] == '#' {
-                            count += 1;
-                        }
-                    }
-                    if j < w - 1 {
-                        if s[i + 1][j + 1] == '#' {
-                            count += 1
                         }
                     }
                 }
