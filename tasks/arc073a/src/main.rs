@@ -7,14 +7,11 @@ fn main() {
         ts: [usize; n]
     }
     let mut count = 0;
-    let mut expire = 0;
-    for ti in ts {
-        if ti < expire {
-            count += t - (expire - ti);
-            expire = ti + t;
+    for i in 0..ts.len() {
+        if i < ts.len() - 1 {
+            count += t.min(ts[i + 1] - ts[i]);
         } else {
             count += t;
-            expire = ti + t;
         }
     }
     println!("{}", count);
