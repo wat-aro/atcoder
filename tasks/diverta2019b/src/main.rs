@@ -2,19 +2,17 @@ use proconio::input;
 
 fn main() {
     input! {
-        r: usize,
-        g: usize,
-        b: usize,
+        rgb: [usize; 3],
         n: usize
     }
-    let mut count = 0;
-
-    for i in 0..=(n / r) {
-        for j in 0..=((n - r * i) / g) {
-            if (n - r * i - g * j) % b == 0 {
-                count += 1;
+    let mut dp = vec![0; n + 1];
+    dp[0] = 1;
+    for c in rgb {
+        for i in 0..=n {
+            if i >= c {
+                dp[i] += dp[i - c]
             }
         }
     }
-    println!("{}", count);
+    println!("{}", dp[n]);
 }
