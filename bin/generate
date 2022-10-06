@@ -12,3 +12,5 @@ grep -n "name = \"main\"" $cargo_path | awk -F: '{print$1}' | xargs -I{} sed -i 
 
 test_path="tasks/$project_name/tests/sample_inputs.rs"
 grep -n "./main" $test_path | awk -F: '{print$1}' | xargs -I{} sed -i -e "{} s/main/$project_name/g" $test_path
+
+sed -i -e '5,48d' $test_path
