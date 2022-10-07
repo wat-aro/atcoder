@@ -7,9 +7,8 @@ fn main() {
     }
     s.sort();
     t.sort();
-    if s.first() < t.last() {
-        println!("Yes");
-    } else if s.iter().all(|c| t.iter().any(|c2| c == c2)) && s.len() < t.len() {
+
+    if s.iter().collect::<String>() < t.iter().rev().collect::<String>() {
         println!("Yes");
     } else {
         println!("No");
