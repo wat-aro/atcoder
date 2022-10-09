@@ -973,6 +973,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "arc080a"
+version = "0.1.0"
+dependencies = [
+ "cli_test_dir",
+ "proconio",
+]
+
+[[package]]
 name = "arc082a"
 version = "0.1.0"
 dependencies = [
